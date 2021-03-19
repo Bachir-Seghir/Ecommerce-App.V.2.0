@@ -1,5 +1,7 @@
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { User } from './schemas/User';
+import { Product } from './schemas/Product';
+import { ProductImage } from './schemas/ProductImage';
 import { createAuth } from '@keystone-next/auth';
 import {
   withItemData,
@@ -42,6 +44,8 @@ export default withAuth(
     lists: createSchema({
       // schemas item go in here
       User,
+      Product,
+      ProductImage,
     }),
     ui: {
       // TODO : change this for roles
