@@ -38,10 +38,16 @@ export default function SignUp() {
 
   return (
     <Form method="POST" onSubmit={handleSubmit}>
+      <h2>Sign Up for new Account</h2>
+      <ErrorMessage error={error} />
       <fieldset>
-        <h2>Sign Up for new Account</h2>
-        <ErrorMessage error={error} />
-        <label htmlFor="email">
+        {data?.createUser && (
+          <p>
+            Signed up with {data.createUser.email} -- please go head and sign in
+            !
+          </p>
+        )}
+        <label htmlFor="name">
           Name
           <input
             type="name"
@@ -52,7 +58,7 @@ export default function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="name">
+        <label htmlFor="email">
           Email
           <input
             type="email"
@@ -74,7 +80,7 @@ export default function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Sign In</button>
+        <button type="submit">Sign Up</button>
       </fieldset>
     </Form>
   );
