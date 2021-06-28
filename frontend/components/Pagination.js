@@ -4,6 +4,7 @@ import Link from 'next/link';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { perPage } from '../config';
+import ErrorMessage from './ErrorMessage';
 
 export const PAGINATION_QUERY = gql`
   query {
